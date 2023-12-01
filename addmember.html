@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Management</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #1a1a1a; /* Dark background color */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #333; /* Dark form background color */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* White box shadow for contrast */
+      width: 320px;
+      max-width: 90%;
+      animation: fadeInUp 1s ease-out; /* Fade-in animation */
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #fff; /* White text color */
+    }
+
+    input,
+    select {
+      width: calc(100% - 20px);
+      padding: 12px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #555; /* Border color */
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #444; /* Input background color */
+      color: #fff; /* Input text color */
+      transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #00bcd4; /* Focus border color */
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M5 7l5 5 5-5H5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px top 50%;
+      background-size: 10px;
+      padding-right: 30px;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #00bcd4; /* Button color */
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #008ba3; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <form action="./registerMember.php" method="post">
+    <label for="member_id">Member ID:</label>
+    <input type="text" id="member_id" name="member_id" required />
+  
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+  
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required />
+  
+    <label for="member_date">Member Date:</label>
+    <input type="date" id="member_date" name="member_date" required />
+  
+    <label for="expiry_date">Expiry Date:</label>
+    <input type="date" id="expiry_date" name="expiry_date" required />
+  
+    <label for="available">Available: </label>
+    <select id="available" name="available" required>
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+  
+    <button type="submit">Add Member</button>
+  </form>
+</body>
+</html>
